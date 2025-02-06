@@ -38,7 +38,17 @@ public sealed class Booking : Entity
     {
         var pricingDetails = pricingService.CalculatePrice(apartment, duration);
 
-        var booking = new Booking(Guid.NewGuid(), apartment.Id, userId, duration, pricingDetails.priceForPeriod, pricingDetails.cleanigfee, pricingDetails.amenitiesUpCharge, pricingDetails.totalPrice, BookingStatus.Reserved, utcNow);
+        var booking = new Booking(
+            Guid.NewGuid(),
+            apartment.Id,
+            userId,
+            duration,
+            pricingDetails.priceForPeriod,
+            pricingDetails.cleanigfee,
+            pricingDetails.amenitiesUpCharge,
+            pricingDetails.totalPrice,
+            BookingStatus.Reserved,
+            utcNow);
 
         booking.RaiseDomainEvent(new BookingReservedDomainEvent(booking.Id));
 
