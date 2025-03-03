@@ -12,7 +12,7 @@ public sealed class Apartment : Entity
         Description = description;
         Address = address;
         Price = price;
-        Cleanigfee = cleaningFee;
+        CleanigFee = cleaningFee;
         Amenities = amenities;
     }
 
@@ -20,7 +20,7 @@ public sealed class Apartment : Entity
     public Description Description { get; private set; }
     public Address Address { get; private set; }
     public Money Price { get; private set; }
-    public Money Cleanigfee { get; private set; }
+    public Money CleanigFee { get; private set; }
     public DateTime? LastBookedOnUtc { get; internal set; }
     public List<Amenity> Amenities { get; set; } = new();
 

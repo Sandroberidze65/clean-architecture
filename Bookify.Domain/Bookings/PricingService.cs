@@ -31,12 +31,12 @@ public class PricingService
 
         var totalPrice = Money.Zero();
         totalPrice += priceForPeriod;
-        if (!apartment.Cleanigfee.IsZero())
+        if (!apartment.CleanigFee.IsZero())
         {
-            totalPrice += apartment.Cleanigfee;
+            totalPrice += apartment.CleanigFee;
         }
 
         totalPrice += amenitiesUpCharge;
-        return new PricingDetails(priceForPeriod, apartment.Cleanigfee, amenitiesUpCharge, totalPrice);
+        return new PricingDetails(priceForPeriod, apartment.CleanigFee, amenitiesUpCharge, totalPrice);
     }
 }
