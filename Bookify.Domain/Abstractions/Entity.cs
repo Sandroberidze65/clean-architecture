@@ -10,7 +10,7 @@ public abstract class Entity
         Id = id;
     }
 
-    public IReadOnlyList<IDomainEvent> DomainEvents()
+    public IReadOnlyList<IDomainEvent> GetDomainEvents()
     {
         return _domainEvents.ToList();
     }
